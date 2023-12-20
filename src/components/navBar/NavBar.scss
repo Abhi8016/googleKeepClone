@@ -1,0 +1,100 @@
+@import "../../mixins.scss";
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--borderColor);
+  height: 3rem;
+  padding: 6px;
+
+  .leftSide {
+    // border: 1px solid blue;
+    display: flex;
+    align-items: center;
+    img {
+      height: 2.2rem;
+      padding-left: 8px;
+      @include md {
+        height: 3.2rem;
+        padding-left: 150px;
+      }
+    }
+    span {
+      padding-left: 4px;
+      font-size: 1.1rem;
+      color: var(--fontColor);
+      font-weight: 500;
+      @include md {
+        padding-left: 8px;
+        font-size: 1.5rem;
+      }
+    }
+  }
+  .rightSide {
+    // width: 150px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // border: 1px solid red;
+    padding-right: 8px;
+    gap: 18px;
+
+    svg {
+      color: var(--placeHolderColor);
+      height: 20px;
+      width: 20px;
+      margin-left: 10px;
+      //   margin: 8px;
+      @include md {
+        height: 30px;
+        width: 30px;
+        // margin: 30px;
+      }
+    }
+    .SearchBar {
+      //   border: 1px solid blue;
+      //   position: absolute;
+      //   width: 200px;
+      //   height: 200px;
+      //   width: 100vw;
+      input {
+        width: 200px;
+        padding: 10px 14px;
+        outline: none;
+        border-radius: 8px;
+        // padding: 10px;
+        border: 0;
+        border: 1px solid transparent;
+        background-color: #fff;
+        border-color: #e0e0e0;
+        &:focus {
+          box-shadow: var(--shadow);
+        }
+      }
+      @include md {
+        input {
+          width: 200px;
+          padding: 10px 14px;
+          outline: none;
+          border-radius: 8px;
+          // padding: 10px;
+          border: 0;
+          border: 1px solid transparent;
+          background-color: var(--searchBarColor);
+          border-color: var(--borderColor);
+          &:focus {
+            box-shadow: var(--shadow);
+          }
+        }
+      }
+    }
+    @include md {
+      padding-right: 150px;
+      gap: 48px;
+    }
+  }
+  @include md {
+    height: 4rem;
+  }
+}

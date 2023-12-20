@@ -1,0 +1,157 @@
+@import "../../mixins.scss";
+.noteWraperGrid {
+  //   margin-top: 20px;
+  // overflow: hidden;
+  margin-bottom: 20px;
+  gap: 10px;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: flex-start;
+  padding-right: 12px;
+  padding-left: 12px;
+  padding-bottom: 24px;
+  //   transition: all 0.2s ease;
+  //   border: 1px solid blue;
+  @include md {
+    width: 100%;
+    min-height: 100vh;
+  }
+  .noteContainer {
+    // background-color: var(--white);
+    margin-top: 14px;
+    word-wrap: break-word;
+    overflow: auto;
+    min-width: 160px;
+    min-height: 160px;
+    max-width: 160px;
+    max-height: 160px;
+    height: auto;
+    padding: 10px;
+    border: 1px solid var(--borderColor);
+    border-radius: 10px;
+    @include md {
+      min-width: 270px;
+      min-height: 120px;
+      max-width: 270px;
+      max-height: 120px;
+    }
+    &:hover {
+      cursor: pointer;
+      box-shadow: var(--shadow);
+    }
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .title {
+      background-color: inherit;
+      margin-bottom: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--blackGray);
+    }
+    .description {
+      background-color: inherit;
+      font-size: 0.8rem;
+      font-weight: 540;
+      color: var(--fontColor);
+    }
+  }
+}
+.noteWraperList {
+  // margin-bottom: 20px;
+  // margin-top: 114px;
+  padding-bottom: 24px;
+  gap: 10px;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  // justify-content: space-around;
+  align-items: center;
+  //   flex-wrap: wrap;
+  flex-direction: column;
+  align-content: flex-start;
+  padding-right: 12px;
+  padding-left: 12px;
+  //   border: 1px solid blue;
+  .noteContainer {
+    // background-color: var(--white);
+    margin-top: 14px;
+    word-wrap: break-word;
+    overflow: auto;
+    min-width: 316px;
+    min-height: 100px;
+    max-width: 316px;
+    max-height: 260px;
+    height: auto;
+    padding: 10px;
+    border: 1px solid var(--borderColor);
+    border-radius: 10px;
+    @include md {
+      min-width: 690px;
+      min-height: 120px;
+      max-width: 690px;
+      max-height: 400px;
+    }
+    &:hover {
+      cursor: pointer;
+      box-shadow: var(--shadow);
+    }
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .title {
+      background-color: inherit;
+      margin-bottom: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--blackGray);
+    }
+    .description {
+      background-color: inherit;
+      font-size: 0.8rem;
+      font-weight: 540;
+      color: var(--fontColor);
+    }
+  }
+}
+.editModeOn {
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  //   justify-content: space-evenly;
+  gap: 30px;
+  align-items: center;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  //   border: 1px solid green;
+  z-index: 10;
+  .Btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // position: absolute;
+    // margin-top: 180px;
+    width: 200px;
+    button {
+      padding: 10px;
+      border: none;
+      background-color: var(--white);
+      border-radius: 10px;
+      font-weight: 500;
+      &:hover {
+        background-color: var(--borderColor);
+        box-shadow: var(--shadow);
+      }
+    }
+  }
+}

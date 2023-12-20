@@ -1,0 +1,59 @@
+:root {
+  --blackGray: #202025;
+  --white: #fefeff;
+  --shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
+    0 2px 6px 2px rgba(60, 64, 67, 0.149);
+  --black: #000000;
+  --fontColor: #46474b;
+  --titleColor: #202025;
+  --borderColor: #d8dddf;
+  --searchBarColor: #f0f3f4;
+  --placeHolderColor: #676667;
+  --editerColor: #f5f5f5;
+  transition: all 0.4s ease;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  
+}
+
+* {
+  font-family: "Roboto", arial, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+html{
+  height: 100%;
+}
+
+body {
+  font-size: 0.85rem;
+  background: var(--white);
+  margin: 0;
+  letter-spacing: 0.07em;
+  // overflow: hidden;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+// ::-webkit-scrollbar {
+//   width: 6px;
+//   height: 5px;
+// }
+
+// ::-webkit-scrollbar-corner {
+//   height: 0;
+// }
+
+// ::-webkit-scrollbar-track {
+//   background-color: transparent;
+//   border-radius: 25px;
+// }
+
+// ::-webkit-scrollbar-thumb {
+//   background-color: var(--borderColor);
+//   border-radius: 25px;
+// }
