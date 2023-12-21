@@ -90,6 +90,10 @@
             height: 26px;
             width: 26px;
           }
+          &:hover{
+            border: 1px solid var(--placeHolderColor);
+            box-shadow: var(--shadow);
+          }
         }
       }
       // border: 1px solid green;
@@ -112,7 +116,7 @@
         }
         &:hover {
           cursor: pointer;
-          background-color: var(--searchBarColor);
+          background-color: var(--btnColor);
         }
       }
     }
