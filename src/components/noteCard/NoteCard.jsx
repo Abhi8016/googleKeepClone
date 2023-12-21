@@ -7,10 +7,10 @@ import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 
 const NoteCard = ({ listOrGridView, searchInput, theme }) => {
-  const noteList = useSelector((state) => state.noteList);
+  const noteList = useSelector((state) => state.noteList); // getting all notes from redux-store
   const dispatch = useDispatch();
   const [editMode, setEditMode] = useState(false);
-  const [currentNote, setCurrentNote] = useState({});
+  const [currentNote, setCurrentNote] = useState({});// setting current note 
 
   return (
     <>
@@ -21,7 +21,7 @@ const NoteCard = ({ listOrGridView, searchInput, theme }) => {
         <EditerCard />
 
         <>
-          {searchInput.isSearching &&
+          {searchInput.isSearching && // if user is searching then search algo run
             noteList.map((i) => {
               if (
                 i.title
@@ -40,7 +40,7 @@ const NoteCard = ({ listOrGridView, searchInput, theme }) => {
                     className="noteContainer"
                     onClick={() => {
                       setEditMode(!editMode);
-                      setCurrentNote({ ...i });
+                      setCurrentNote({ ...i }); // user's selected current note
                     }}
                   >
                     <p className="title">{i.title}</p>
@@ -50,7 +50,7 @@ const NoteCard = ({ listOrGridView, searchInput, theme }) => {
               }
             })}
 
-          {!searchInput.isSearching &&
+          {!searchInput.isSearching && // if user is not searching then show all notes in reverse
             noteList.slice(0).reverse().map((i) => (
               <div
                 key={i.id}
@@ -78,7 +78,7 @@ const NoteCard = ({ listOrGridView, searchInput, theme }) => {
                 onClick={() => {
                   // dispatch(remove(currentNote.id));
                   // setEditMode(false);
-                  confirmAlert({
+                  confirmAlert({ /// warning for delete
                     title: "Warning",
                     message: "Are you sure you want to delete this",
                     buttons: [
@@ -101,7 +101,8 @@ const NoteCard = ({ listOrGridView, searchInput, theme }) => {
               >
                 Delete Note
               </button>
-              <button onClick={() => setEditMode(false)}>Close Editer</button>
+              <button onClick={() => setEditMode(false)}>Close Editer</button> 
+              {/* deleteing the note with warning */}
             </div>
           </div>
         )}

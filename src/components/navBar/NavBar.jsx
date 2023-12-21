@@ -12,9 +12,9 @@ const NavBar = ({
   setThemeProp,
   themeProp,
 }) => {
-  const [theme, setTheme] = useState(themeProp);
+  const [theme, setTheme] = useState(themeProp); // setting the theme initial state as it is in the localstorage geting it from props
 
-  const [searchInputBtn, setSearchInputBtn] = useState(false);
+  const [searchInputBtn, setSearchInputBtn] = useState(false); // setting if user is searching or not
 
   return (
     <>
@@ -24,7 +24,7 @@ const NavBar = ({
           backgroundColor: `${
             theme ? "var(--editerColor)" : "var(--blackGray)"
           }`,
-        }}
+        }} // changing theme color
       >
         <div className="leftSide">
           <img src={logo} alt="logo-pic" />
@@ -56,7 +56,8 @@ const NavBar = ({
               />
             )}
           </div>
-          <div onClick={() => setListOrGridView(!listOrGridView)}>
+          {/* // setting listview or gridview */}
+          <div onClick={() => setListOrGridView(!listOrGridView)}> 
             {listOrGridView ? <IoGridOutline /> : <FiMenu />}
           </div>
 
@@ -64,9 +65,10 @@ const NavBar = ({
             onClick={() => {
               setTheme(!theme);
               setThemeProp(!theme);
-              localStorage.setItem("theme", JSON.stringify(!theme));
+              localStorage.setItem("theme", JSON.stringify(!theme)); // saving theme value in localstorage
             }}
           >
+            {/* // changing theme icon */}
             {theme ? <FaRegSun /> : <FaRegMoon />}
           </div>
         </div>

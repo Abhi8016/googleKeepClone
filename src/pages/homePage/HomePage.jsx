@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import NavBar from "../../components/navBar/NavBar";
-import EditerCard from "../../components/editerCard/EditerCard";
 import "./HomePage.scss";
 import NoteCard from "../../components/noteCard/NoteCard";
-import { useSelector } from "react-redux";
 
-const prevTheme = localStorage.getItem("theme");
+const prevTheme = localStorage.getItem("theme"); // geting theme value from localStorage
 let themeValue;
 if (prevTheme === "false") {
   themeValue = false;
@@ -13,7 +11,7 @@ if (prevTheme === "false") {
   themeValue = true;
 }
 const HomePage = () => {
-  const [theme, setTheme] = useState(themeValue);
+  const [theme, setTheme] = useState(themeValue); 
   const [listOrGridView, setListOrGridView] = useState(true);
   const [searchInput, setSearchInput] = useState({
     searchValue: "",
