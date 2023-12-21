@@ -16,7 +16,7 @@ const NoteCard = ({ listOrGridView, searchInput, theme }) => {
     <>
       <div
         className={`${listOrGridView ? "noteWraperGrid" : "noteWraperList"}`}
-        style={{ backgroundColor: `${theme ? "var(--editerColor)" : "var(--blackGray)"}` }}
+        style={{ backgroundColor: `${theme ? "var(--editerColor)" : "var(--blackGray)"}`, position: `${editMode ? "fixed" : "relative"}` }}
       >
         <EditerCard />
 
@@ -51,7 +51,7 @@ const NoteCard = ({ listOrGridView, searchInput, theme }) => {
             })}
 
           {!searchInput.isSearching &&
-            noteList.map((i) => (
+            noteList.slice(0).reverse().map((i) => (
               <div
                 key={i.id}
                 style={{ backgroundColor: `${i.bgColor}` }}
