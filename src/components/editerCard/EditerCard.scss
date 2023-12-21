@@ -117,6 +117,7 @@
         &:hover {
           cursor: pointer;
           background-color: var(--btnColor);
+          box-shadow: var(--shadow);
         }
       }
     }

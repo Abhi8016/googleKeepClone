@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import "./EditerCard.scss";
 import TextareaAutosize from "react-textarea-autosize";
-import { IoReturnDownForwardOutline } from "react-icons/io5";
-import { FaCheck } from "react-icons/fa";
 import { v4 as uuidv4 } from "uuid";
 import { useDispatch, useSelector } from "react-redux";
 import { add, update } from "../../store/NoteSlice";
